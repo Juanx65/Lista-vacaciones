@@ -1,5 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonButton, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import { IonApp, IonButton, IonPage, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 
 
@@ -25,31 +25,19 @@ import './theme/variables.css';
 
 import NavBar from "./components/Navbar"
 import Gray_box from './components/Gray_box';
-import Liquidaciones from './components/Liquidaciones';
+import Licencias from './components/Licencias';
 
 
 setupIonicReact();
 
-
-const JEISON = {data : [
-              { title: "Nombre", content: "Juan Aguilera" },
-              { title: "Tipo", content: "Simple" },
-              { title: "Vinculo", content: "Hermano(a)" },
-              { title: "Monto", content: "200.000" }
-            ]}
-
 const App: React.FC = () => (
- <>
- <NavBar/>
-<p></p>
-
-
- {/* <Gray_box data = {JEISON.data}/> */}
- <Liquidaciones/>
-
- 
-
- </>
+  <IonApp>
+    <IonPage>
+      <IonReactRouter>
+        <Route exact path="/" component={Licencias}></Route>
+      </IonReactRouter>
+    </IonPage>
+  </IonApp>
 );
 
 export default App;
