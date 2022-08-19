@@ -9,20 +9,22 @@ ion-modal::part(backdrop) {
   background: rgba(0, 0, 0, .9);
 }
 
+.inputDivModal {
+  background: rgba(127, 127, 139, 0.2);
+  display: flex;
+
+  border-radius: 10px;
+  min-height: 40px;
+}
 
 .inputModal {
-  background: rgba(127, 127, 139, 0.2);
   color: rgba(0, 0, 0, 0.5);
-
-  margin-top: auto;
-  margin-left: auto;
-  font-display: initial;
+  
 }
 
 .textModal {
-  margin-top: auto;
-  margin-left: auto;
-  font-display: initial;
+  margin-top: 7px;
+  margin-left: 8px;
 }
 
 .itemModal {
@@ -34,7 +36,8 @@ ion-grid ion-row {
   height: 3rem;
 }
 
-ion-row ion-input, ion-label {
+ion-row ion-input,
+ion-label {
   width: 100%;
   height: 2rem;
 

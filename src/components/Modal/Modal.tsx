@@ -26,23 +26,23 @@ const Modal: React.FC<ModalProps> = ({ dismiss, data }) => {
                         <IonGrid className="gridModal">
                             <IonRow>
                                 <IonCol><IonLabel class="textModal"> <strong> Codigo Ficha </strong> </IonLabel></IonCol>
-                                <IonCol><IonLabel class="inputModal">{data.CODIGO_FICHA}</IonLabel></IonCol>
+                                <IonCol><div className="inputDivModal"><IonLabel class="textModal">{data.CODIGO_FICHA}</IonLabel></div></IonCol>
                             </IonRow>
                             <IonRow>
                                 <IonCol><IonLabel class="textModal"><strong> N° Licencia </strong></IonLabel></IonCol>
-                                <IonCol><IonInput class="inputModal" value={data.N_LICENCIA}></IonInput></IonCol>
+                                <IonCol><div className="inputDivModal"><IonInput class="inputModal" value={data.N_LICENCIA}></IonInput></div></IonCol>
                             </IonRow>
                             <IonRow>
                                 <IonCol><IonLabel class="textModal"><strong> F. Inicio </strong></IonLabel></IonCol>
-                                <IonCol><IonInput class="inputModal" value={data.INICIO}></IonInput></IonCol>
+                                <IonCol><div className="inputDivModal"><IonInput class="inputModal" value={data.INICIO}></IonInput></div></IonCol>
                             </IonRow>
                             <IonRow>
                                 <IonCol><IonLabel class="textModal"><strong> F. Termino</strong> </IonLabel></IonCol>
-                                <IonCol><IonInput class="inputModal" value={data.TERMINO}></IonInput></IonCol>
+                                <IonCol><div className="inputDivModal"><IonInput class="inputModal" value={data.TERMINO}></IonInput></div></IonCol>
                             </IonRow>
                             <IonRow>
                                 <IonCol><IonLabel class="textModal"><strong> N° Dias</strong></IonLabel></IonCol>
-                                <IonCol><IonLabel class="inputModal">{data.N_DIAS}</IonLabel></IonCol>
+                                <IonCol><div className="inputDivModal"><IonLabel class="textModal">{data.N_DIAS}</IonLabel></div></IonCol>
                             </IonRow>
                         </IonGrid>
                     </IonItem>
