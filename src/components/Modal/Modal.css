@@ -1,28 +1,41 @@
 ion-modal {
-    --height: fit-content;
-    --width: 95%;
-    --border-radius: 16px;
-    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  }
-  
-  ion-modal::part(backdrop) {
-    background: rgba(0, 0, 0, .9);
-  }
+  --height: fit-content;
+  --width: 90%;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+ion-modal::part(backdrop) {
+  background: rgba(0, 0, 0, .9);
+}
 
 
 .inputModal {
-    background: rgba(127, 127, 139, 0.2);
-    color: rgba(0, 0, 0, 0.5);
+  background: rgba(127, 127, 139, 0.2);
+  color: rgba(0, 0, 0, 0.5);
+
+  margin-top: auto;
+  margin-left: auto;
+  font-display: initial;
 }
 
 .textModal {
-    position: fixed;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+  margin-top: auto;
+  margin-left: auto;
+  font-display: initial;
 }
 
 .itemModal {
-    border-radius: 10px;
+  border-radius: 10px;
+}
+
+ion-grid ion-row {
+  width: 100%;
+  height: 3rem;
+}
+
+ion-row ion-input, ion-label {
+  width: 100%;
+  height: 2rem;
+
 }

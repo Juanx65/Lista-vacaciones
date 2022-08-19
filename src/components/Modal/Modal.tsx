@@ -17,38 +17,38 @@ const Modal: React.FC<ModalProps> = ({ dismiss, data }) => {
     return (
         <IonPage>
             <IonItem class="itemModal">
-                <IonLabel>Edición Solicitud</IonLabel>
+                <IonLabel> <strong>Edición Solicitud</strong></IonLabel>
                 <IonIcon onClick={dismiss} slot="end" md={closeCircleSharp} ios={closeCircleSharp} />
             </IonItem>
             {
                 data.map((data: { CODIGO_FICHA: string | number | null | undefined; CODIGO_LICENCIA: string | number | null | undefined; N_LICENCIA: string | number | null | undefined; CREACION: string | number | null | undefined; INICIO: string | number | null | undefined; TERMINO: string | number | null | undefined; N_DIAS: string | number | null | undefined; }) => (
                     <IonItem lines="none">
-                        <IonGrid>
+                        <IonGrid className="gridModal">
                             <IonRow>
-                                <IonCol><IonLabel class="textModal"> Codigo Ficha </IonLabel></IonCol>
+                                <IonCol><IonLabel class="textModal"> <strong> Codigo Ficha </strong> </IonLabel></IonCol>
                                 <IonCol><IonLabel class="inputModal">{data.CODIGO_FICHA}</IonLabel></IonCol>
                             </IonRow>
                             <IonRow>
-                                <IonCol><IonLabel class="textModal"> N° Licencia </IonLabel></IonCol>
+                                <IonCol><IonLabel class="textModal"><strong> N° Licencia </strong></IonLabel></IonCol>
                                 <IonCol><IonInput class="inputModal" value={data.N_LICENCIA}></IonInput></IonCol>
                             </IonRow>
                             <IonRow>
-                                <IonCol><IonLabel class="textModal"> F. Inicio </IonLabel></IonCol>
+                                <IonCol><IonLabel class="textModal"><strong> F. Inicio </strong></IonLabel></IonCol>
                                 <IonCol><IonInput class="inputModal" value={data.INICIO}></IonInput></IonCol>
                             </IonRow>
                             <IonRow>
-                                <IonCol><IonLabel class="textModal"> F. Termino </IonLabel></IonCol>
+                                <IonCol><IonLabel class="textModal"><strong> F. Termino</strong> </IonLabel></IonCol>
                                 <IonCol><IonInput class="inputModal" value={data.TERMINO}></IonInput></IonCol>
                             </IonRow>
                             <IonRow>
-                                <IonCol><IonLabel class="textModal"> N° Dias</IonLabel></IonCol>
+                                <IonCol><IonLabel class="textModal"><strong> N° Dias</strong></IonLabel></IonCol>
                                 <IonCol><IonLabel class="inputModal">{data.N_DIAS}</IonLabel></IonCol>
                             </IonRow>
                         </IonGrid>
                     </IonItem>
                 ))
             }
-            <IonGrid>
+            <IonGrid>   
                 <IonRow>
                     <IonCol></IonCol>
                     <IonCol>
