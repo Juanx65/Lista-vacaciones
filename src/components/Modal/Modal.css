@@ -1,27 +1,14 @@
-.overlay {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, .5);
+ion-modal {
+    --height: fit-content;
+    --width: 95%;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  
+  ion-modal::part(backdrop) {
+    background: rgba(0, 0, 0, .9);
+  }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.contenedorModal {
-    width: fit-content;
-    height: fit-content;
-    min-width: 100px;
-    min-height: 100px;
-    background: #fff;
-    position: relative;
-    border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, .2) 0px 7px 29px 0px;
-}
 
 .inputModal {
     background: rgba(127, 127, 139, 0.2);
@@ -39,4 +26,3 @@
 .itemModal {
     border-radius: 10px;
 }
-

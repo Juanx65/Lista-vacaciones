@@ -1,5 +1,5 @@
 import { IonRow, IonCol, IonItem, IonHeader, IonTitle, IonSelect, IonSelectOption, IonIcon, IonLabel, IonList, IonListHeader, IonContent, IonGrid, IonText, IonSearchbar, IonButton, IonInfiniteScroll, IonInfiniteScrollContent, IonPage, useIonModal } from '@ionic/react';
-import React, { Component, useState } from 'react';
+import React, { Component, useRef, useState } from 'react';
 
 import { pencilOutline } from 'ionicons/icons';
 /* POST AND GET */
@@ -36,6 +36,7 @@ const Licencias: React.FC<Props> = ({ }) => {
     const [data, setData] = useState(vacaciones);
     const [filteredData, setFilteredData] = useState(data);
 
+    const [hola, setHola] = useState<any>('')
     //TOKEN
     const TOKEN = "SA29ASJAPhs5Yol3ew2esBqjZclgNZcZdiHQIVjZ2wSH9E2ci2OtF0X/I0P8pJ/OITP58EegTtsYevHNUOAy83og84RYGzmoD358Aq/Gnk//sxsAVt4wGKgANvkqgGN8";
 
@@ -76,7 +77,8 @@ const Licencias: React.FC<Props> = ({ }) => {
     const [present, dismiss] = useIonModal(Modal, {
         dismiss: () => dismiss(),
         data: vacaciones,
-        id: "example-modal"
+        id: "example-modal",
+        trigger: "open-modal",
     });
     const modalOptions = {
         onDidDismiss: () => dismiss(),
@@ -114,36 +116,35 @@ const Licencias: React.FC<Props> = ({ }) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {data.map((value, index) => {
-                                    return (
-                                        <tr key={index}>
-                                            <td>{value.INICIO}</td>
-                                            <td>{value.TERMINO}</td>
-                                            <td>{value.N_DIAS}</td>
-                                            <td> <IonIcon onClick={()=> present(modalOptions)}
-                                                ios={pencilOutline} 
-                                                md={pencilOutline} 
-                                                slot='end'></IonIcon> 
-                                            </td>
-                                        </tr>
-                            );
-                                })}
-                        </tbody>
-                    </table>
-                    <IonItem >
-                        <IonButton expand='block' onClick={() => {
-                            getListaVacaciones({ TOKEN: TOKEN }).then((responseData: any) => {
-                                setData(responseData.data);
-                                //console.log(data);       
-                                //console.log(responseData.data[0].CODIGO_FICHA);  
-                            })
-                        }}>
-                            Buscar
-                        </IonButton>
-                    </IonItem>
-                </IonInfiniteScrollContent>
-            </IonInfiniteScroll>
-        </IonContent>
+                                {data.map((value, index) => (
+                                    <tr key={index}>
+                                        <td>{value.INICIO}</td>
+                                        <td>{value.TERMINO}</td>
+                                        <td>{value.N_DIAS}</td>
+                                        <td> <IonIcon onClick={() => { present(modalOptions) }}
+                                            ios={pencilOutline}
+                                            md={pencilOutline}
+                                            slot='end'></IonIcon>
+                                        </td>
+                                    </tr>
+
+                                ))}
+                            </tbody>
+                        </table>
+                        <IonItem >
+                            <IonButton expand='block' onClick={() => {
+                                getListaVacaciones({ TOKEN: TOKEN }).then((responseData: any) => {
+                                    setData(responseData.data);
+                                    //console.log(data);       
+                                    //console.log(responseData.data[0].CODIGO_FICHA);  
+                                })
+                            }}>
+                                Buscar
+                            </IonButton>
+                        </IonItem>
+                    </IonInfiniteScrollContent>
+                </IonInfiniteScroll>
+            </IonContent>
         </IonPage >
     )
 }
