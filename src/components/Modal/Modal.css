@@ -19,12 +19,20 @@ ion-modal::part(backdrop) {
 
 .inputModal {
   color: rgba(0, 0, 0, 0.5);
-  
+
 }
 
 .textModal {
   margin-top: 7px;
   margin-left: 8px;
+}
+
+.textModalStrong {
+  margin-top: 7px;
+
+  text-align: end;
+  position: absolute;
+  margin-left: -15%;
 }
 
 .itemModal {
